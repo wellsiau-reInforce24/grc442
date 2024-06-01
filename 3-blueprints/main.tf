@@ -14,9 +14,10 @@ resource "aws_servicecatalog_product" "blueprints" {
   type        = "EXTERNAL"
 
   provisioning_artifact_parameters {
-    name         = "v1"
-    description  = "v1"
-    type         = "EXTERNAL"
-    template_url = "https://reinforce-grc442-artifact.s3.amazonaws.com/isv_iam_roles-v2024-06-01_13_59_58.tar.gz"
+    name                        = "v1"
+    description                 = "v1"
+    type                        = "EXTERNAL"
+    template_url                = "https://reinforce-grc442-artifact.s3.amazonaws.com/isv_iam_roles-v2024-06-01_13_59_58.tar.gz"
+    disable_template_validation = true
   }
 }
