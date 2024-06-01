@@ -1,0 +1,13 @@
+summary-position: bottom
+compact: True
+quiet: True
+directory:
+- 2-product-factory/src
+skip-check:
+- CKV2_AWS_62
+- CKV2_AWS_6
+- CKV2_AWS_61
+- CKV_AWS_18
+- CKV_AWS_145
+- CKV_AWS_144
+- CKV_AWS_21
