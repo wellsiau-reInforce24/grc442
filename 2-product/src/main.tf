@@ -9,7 +9,7 @@ resource "aws_iam_role" "security_scanner" {
   # count is 1 if var.enable_security_scanner is true
   count               = var.enable_security_scanner ? 1 : 0
   name                = "security_scanner_${random_string.random.result}"
-  assume_role_policy  = data.aws_iam_policy_document.security_scanner
+  assume_role_policy  = data.aws_iam_policy_document.security_scanner.json
   managed_policy_arns = ["arn:aws:iam::aws:policy/ReadOnlyAccess"]
 }
 
@@ -28,7 +28,7 @@ data "aws_iam_policy_document" "security_scanner" {
 resource "aws_iam_role" "finops_scanner" {
   count               = var.enable_finops_scanner ? 1 : 0
   name                = "finops_scanner_${random_string.random.result}"
-  assume_role_policy  = data.aws_iam_policy_document.finops_scanner
+  assume_role_policy  = data.aws_iam_policy_document.finops_scanner.json
   managed_policy_arns = ["arn:aws:iam::aws:policy/AWSBillingReadOnlyAccess"]
 }
 
