@@ -17,7 +17,7 @@ resource "aws_servicecatalog_product" "blueprints" {
     name                        = "v1"
     description                 = "v1"
     type                        = "EXTERNAL"
-    template_url                = "https://reinforce-grc442-artifact.s3.amazonaws.com/saas_isv_roles-v2024-06-09_00_14_09.tar.gz "
+    template_url                = "https://reinforce-grc442-artifact.s3.amazonaws.com/isv_product_roles-v2024-06-09_12_22_45.tar.gz"
     disable_template_validation = true
   }
 }
@@ -29,5 +29,5 @@ resource "aws_servicecatalog_provisioning_artifact" "v2" {
   type                        = "EXTERNAL"
   product_id                  = aws_servicecatalog_product.blueprints.id
   disable_template_validation = true
-  template_url                = "https://reinforce-grc442-artifact.s3.amazonaws.com/saas_isv_roles-v2024-06-09_00_14_59.tar.gz"
+  template_url                = "https://reinforce-grc442-artifact.s3.amazonaws.com/isv_product_roles-v2024-06-09_12_23_51.tar.gz"
 }
