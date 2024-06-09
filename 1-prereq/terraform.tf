@@ -1,6 +1,6 @@
 terraform {
   cloud {
-    organization = "wellsiau-org"
+    organization = "reInforce2024"
     workspaces {
       name = "grc442-r1-prereq"
     }
