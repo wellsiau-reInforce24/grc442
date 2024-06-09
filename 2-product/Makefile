@@ -11,7 +11,7 @@ ARTIFACT_BUCKET = reinforce-grc442-artifact
 ARTIFACT_HASH = $(shell sha256sum $(BUILD_DIR)/$(ARTIFACT_FILE) | cut -d" " -f 1)
 ARTIFACT_KEY = $(PRODUCT_NAME)-$(ARTIFACT_HASH).tar.gz
 
-LATEST_HASH = $(shell sha256sum $(TEMP_DIR)/$(ARTIFACT_FILE) | cut -d" " -f 1)
+PREVIOUS_HASH = $(shell sha256sum $(TEMP_DIR)/$(ARTIFACT_FILE) | cut -d" " -f 1)
 
 CURRENT_DATE = $(shell date '+%Y-%m-%d_%H_%M_%S')
 ARTIFACT_VERSIONED_KEY = $(PRODUCT_NAME)-v$(CURRENT_DATE).tar.gz
@@ -27,7 +27,7 @@ build: clean
 	tar -czvf $(BUILD_DIR)/$(ARTIFACT_FILE) -C $(PRODUCT_DIR) .
 
 version:
-	if [[ "$(ARTIFACT_HASH)" != "$(LATEST_HASH)" ]]; then cp $(BUILD_DIR)/$(ARTIFACT_FILE) $(TEMP_DIR)/$(ARTIFACT_FILE); cp $(BUILD_DIR)/$(ARTIFACT_FILE) $(DIST_DIR)/$(ARTIFACT_VERSIONED_KEY); fi
+	if [[ "$(ARTIFACT_HASH)" != "$(PREVIOUS_HASH)" ]]; then cp $(BUILD_DIR)/$(ARTIFACT_FILE) $(TEMP_DIR)/$(ARTIFACT_FILE); cp $(BUILD_DIR)/$(ARTIFACT_FILE) $(DIST_DIR)/$(ARTIFACT_VERSIONED_KEY); fi
 
 upload:
 	# copy file, rename to version by date and upload to s3 here
