@@ -2,6 +2,12 @@ provider "aws" {
   assume_role {
     role_arn = "arn:aws:iam::955372440160:role/AWSControlTowerExecution"
   }
+
+  default_tags {
+    tags = {
+      EventName = "reinforce-grc442-r1"
+    }
+  }
 }
 
 # iam role with assume role document
@@ -23,7 +29,7 @@ data "aws_iam_policy_document" "blueprint_afc" {
     principals {
       type = "AWS"
       identifiers = [
-        "arn:aws:iam::164368139081:role/AWSControlTowerExecution",
+        "arn:aws:iam::164368139081:role/service-role/AWSControlTowerAdmin",
         "arn:aws:iam::164368139081:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSAdministratorAccess_f39f7c68c949bbc5"
       ]
     }
