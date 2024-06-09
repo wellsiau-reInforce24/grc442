@@ -4,7 +4,7 @@ BUILD_DIR = $(BASE)/build
 DIST_DIR = $(BASE)/dist
 TEMP_DIR = $(BASE)/temp
 
-PRODUCT_NAME = saas_isv_roles
+PRODUCT_NAME = isv_product_roles
 ARTIFACT_FILE = $(PRODUCT_NAME).tar.gz
 
 ARTIFACT_BUCKET = reinforce-grc442-artifact
