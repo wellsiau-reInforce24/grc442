@@ -1,0 +1,16 @@
+# To use this template
+# jinja2 --format=yaml product_pa.jinja manifest.yaml
+
+{%- for item, attr in product_manifest.items() %}
+resource "aws_servicecatalog_provisioning_artifact" "version_{{ loop.index }}" {
+  {% if loop.index > 1 -%}
+  depends_on                  = [aws_servicecatalog_provisioning_artifact.version_{{ loop.index - 1}}]
+  {%- endif %}
+  name                        = "Example product v{{ attr.version }}"
+  description                 = "v{{ attr.version }}"
+  product_id                  = aws_servicecatalog_product.example.id
+  type                        = "EXTERNAL"
+  template_url                = "{{ attr.template_url }}"
+  disable_template_validation = true
+}
+{% endfor %}
