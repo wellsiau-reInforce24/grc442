@@ -1,6 +1,6 @@
 # random string generator, 4 characters
 resource "random_string" "random" {
-  length  = 4
+  length  = 6
   special = false
 }
 
