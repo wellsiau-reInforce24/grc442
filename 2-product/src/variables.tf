@@ -7,5 +7,5 @@ variable "enable_security_scanner" {
 variable "enable_finops_scanner" {
   description = "Enable finops scanner"
   type        = bool
-  default     = true
+  default     = false
 }
