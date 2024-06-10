@@ -30,7 +30,7 @@ data "aws_iam_policy_document" "blueprint_afc" {
       type = "AWS"
       identifiers = [
         "arn:aws:iam::164368139081:role/service-role/AWSControlTowerAdmin",
-        "arn:aws:iam::164368139081:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSAdministratorAccess_f39f7c68c949bbc5"
+        "arn:aws:iam::164368139081:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_CT-Management-Admin_5d01280c9cc8c464"
       ]
     }
   }
