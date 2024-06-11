@@ -17,7 +17,7 @@ resource "aws_servicecatalog_product" "blueprints" {
     name                        = "v1"
     description                 = "v1"
     type                        = "EXTERNAL"
-    template_url                = "https://reinforce-grc442-artifact.s3.amazonaws.com/isv_product_roles-v2024-06-10_08_50_26.tar.gz"
+    template_url                = "https://reinforce-grc442-artifact.s3.amazonaws.com/isv_saas_product_roles-v2024-06-11_08_26_10.tar.gz"
     disable_template_validation = true
   }
 }
@@ -25,9 +25,9 @@ resource "aws_servicecatalog_product" "blueprints" {
 # aws service catalog provisioning artifact
 resource "aws_servicecatalog_provisioning_artifact" "v2" {
   name                        = "v2"
-  description                 = "v2"
+  description                 = "v2 with finops scanner"
   type                        = "EXTERNAL"
   product_id                  = aws_servicecatalog_product.blueprints.id
   disable_template_validation = true
-  template_url                = "https://reinforce-grc442-artifact.s3.amazonaws.com/isv_product_roles-v2024-06-10_08_51_50.tar.gz"
+  template_url                = "https://reinforce-grc442-artifact.s3.amazonaws.com/isv_saas_product_roles-v2024-06-11_08_26_57.tar.gz"
 }

@@ -1,5 +1,5 @@
 run "basic_validation" {
-  command = plan
+  command = apply
 
   variables {
     enable_security_scanner = true

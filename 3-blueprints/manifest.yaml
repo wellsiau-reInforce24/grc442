@@ -1,0 +1,8 @@
+product_manifest:
+  item1:
+    version: 1
+    template_url: https://reinforce-grc442-artifact.s3.amazonaws.com/isv_saas_product_roles-v2024-06-11_08_26_10.tar.gz
+
+  item2:
+    version: 2
+    template_url: https://reinforce-grc442-artifact.s3.amazonaws.com/isv_saas_product_roles-v2024-06-11_08_26_57.tar.gz

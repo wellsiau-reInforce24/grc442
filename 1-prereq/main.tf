@@ -5,7 +5,7 @@ provider "aws" {
 
   default_tags {
     tags = {
-      EventName = "reinforce-grc442-r1"
+      EventName = "reinforce-grc442"
     }
   }
 }
@@ -29,8 +29,8 @@ data "aws_iam_policy_document" "blueprint_afc" {
     principals {
       type = "AWS"
       identifiers = [
-        "arn:aws:iam::164368139081:role/service-role/AWSControlTowerAdmin",
-        "arn:aws:iam::164368139081:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_CT-Management-Admin_5d01280c9cc8c464"
+        "arn:aws:iam::${var.ct_management_acc_id}:role/service-role/AWSControlTowerAdmin",
+        "${var.ct_management_sso_admin_role}"
       ]
     }
   }

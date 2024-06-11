@@ -1,8 +1,0 @@
-product_manifest:
-  item1:
-    version: 1
-    template_url: https://reinforce-grc442-artifact.s3.amazonaws.com/simple-s3-bucket_v2024-05-18_16_51_34.tar.gz
-
-  item2:
-    version: 2
-    template_url: https://reinforce-grc442-artifact.s3.amazonaws.com/simple-s3-bucket_v2024-05-18_16_51_47.tar.gz
